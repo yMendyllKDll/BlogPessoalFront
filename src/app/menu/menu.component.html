@@ -1,30 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img [src]="foto" onerror="this.src = 'https://i.imgur.com/rNUV85x.png'" alt="imagem de perfil" class="rounded-circle img-fluid" width="50">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto d-flex align-items-center">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <img src="https://avatars.githubusercontent.com/u/56370876?v=4" alt="Imagem do usuário" height = 50px width = 50px class="rounded rounded-circle img-fluid">
-      </li>
-      <li class="nav-item pl-3">
-        <p class="m-0 font-weight-bold text-white font-size-16">Nome do usuário</p>
-      </li>
-      <li class="nav-item pl-3">
-        <a href="">
-          <p class="text-white font-size-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
-        </a>
+        <p class="nav-link m-0 font-weight-bold nome" href="#">Bem vinde, <span class="texto">{{nome}}</span> <a href="" class="text-decoration-none text-light"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a><span class="sr-only">(current)</span></p>
       </li>
     </ul>
 
-    <ul class="navbar-nav ml-auto d-flex align-items-center">
-      <li class="nav-item pl-3">
-        <a class="m-0 font-weight-bold text-white font-size-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
-      </li>
-
-    </ul>
-
+    <div class="d-flex align-items-center">
+      <a (click)="sair()" class="text-light text-decoration-none m-0 p-0">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+    </div>
   </div>
 </nav>

@@ -8,7 +8,7 @@
 
         <div class="col-md-10">
           <h1 class="text-center">Cadastro</h1>
-
+          <form>
           <div class="form-group">
             <label for="nome">Nome</label>
             <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome" [(ngModel)]= 'usuario.nome'>
@@ -37,6 +37,7 @@
               <option value="adm">Administrador</option>
             </select>
           </div>
+        </form>
           <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-warning mr-4" routerLink="/entrar">Cancelar</button>
             <button type="submit" class="btn btn-primary" (click)="cadastrar()">Cadastrar</button>
