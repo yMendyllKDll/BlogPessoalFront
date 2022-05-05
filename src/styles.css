@@ -20,3 +20,10 @@ html{
 .font-hover:hover{
   color: #A6D5FA !important
 }
+
+.fs-54{
+  font-size: 54pt;
+ }
+ .fs-18{
+  font-size: 18pt;
+ }

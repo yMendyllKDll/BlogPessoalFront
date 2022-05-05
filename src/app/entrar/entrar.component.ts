@@ -22,6 +22,7 @@ export class EntrarComponent implements OnInit {
     this.auth.entrar(this.usuarioLogin).subscribe({
       next: (resp: UsuarioLogin) => {
         this.usuarioLogin = resp;
+        alert('Usuario Logado com sucesso');
         environment.id = this.usuarioLogin.id;
         environment.nome = this.usuarioLogin.nome;
         environment.foto = this.usuarioLogin.foto;
@@ -34,5 +35,17 @@ export class EntrarComponent implements OnInit {
         }
       },
     });
+  }
+  validaEmail() {
+    let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if(this.usuarioLogin.usuario.match(regex)) {
+      let usuario = (<HTMLDivElement>document.querySelector('#usuario'))
+      usuario.style.borderColor = 'green';
+      usuario.style.boxShadow = '0 0 1em green';
+    } else {
+      let usuario = (<HTMLDivElement>document.querySelector('#usuario'))
+      usuario.style.borderColor = 'red';
+      usuario.style.boxShadow = '0 0 1em red';
+    }
   }
 }
