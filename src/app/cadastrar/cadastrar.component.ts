@@ -40,13 +40,38 @@ export class CadastrarComponent implements OnInit {
         this.usuario = resp
         alert('Usuario Cadastrado com sucesso!')
         this.router.navigate(['/entrar']);
-        }//,
-        //error: (erro) => {
-         // if(erro.status == 400) {
-           // alert('Email já cadastrado!');
-         // }
-        })//,
-      //})
+        },
+        error: (erro) => {
+          if(erro.status == 400) {
+            alert('Campo vazio!');
+          }
+        },
+      })
+  }
+}
+
+validaEmail() {
+  let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+  if(this.usuario.usuario.match(regex)) {
+    let usuario = (<HTMLDivElement>document.querySelector('#usuario'))
+    usuario.style.borderColor = 'green';
+    usuario.style.boxShadow = '0 0 1em green';
+  } else {
+    let usuario = (<HTMLDivElement>document.querySelector('#usuario'))
+    usuario.style.borderColor = 'red';
+    usuario.style.boxShadow = '0 0 1em red';
+  }
+}
+
+validarNome() {
+  if (this.usuario.nome.length >= 3) {
+    let nome = (<HTMLDivElement>document.querySelector('#nome'))
+    nome.style.borderColor = 'green';
+    nome.style.boxShadow = '0 0 1em green';
+  } else {
+    let nome = (<HTMLDivElement>document.querySelector('#nome'))
+    nome.style.borderColor = 'red';
+    nome.style.boxShadow = '0 0 1em red';
   }
 }
 }

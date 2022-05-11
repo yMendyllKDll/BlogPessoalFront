@@ -8,6 +8,6 @@ export class Usuario{
   public foto: string;
   public tipo: string;
   public usuario: string;
-  public Postagem: Postagem[];
+  public postagem: Postagem[];
 
 }

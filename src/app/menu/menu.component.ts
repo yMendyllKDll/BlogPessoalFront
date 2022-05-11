@@ -16,11 +16,14 @@ export class MenuComponent implements OnInit {
   ngOnInit() {}
 
   sair() {
-    this.router.navigate(['/entrar']);
-    environment.token = '';
-    environment.foto = '';
-    environment.id = 0;
-    environment.nome = '';
+    environment.id = 0
+    environment.nome = ''
+    environment.token = ''
+    environment.foto = ''
+    environment.usuario = ''
+    environment.tipo = ''
+
+    this.router.navigate(['/entrar'])
   }
 
 }
